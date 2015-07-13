@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/lodash.min.js"></script>
+        <script src="js/backbone.min.js"></script>
+
+        <script>
+
+            $(function() {
+                var Profile = Backbone.Model.extend({
+                  defaults: {
+                    name: 'Mark Gosselar',
+                    mail: 'zack@bayside.hs.ca',
+                    roles: 'Cool Guy',
+                    langcode: 'english'
+                  }
+                });
+
+                var ProfileList = Backbone.Collection.extend({
+                    model: Profile,
+                    url: 'http://nearly.local.dev/api/user'
+                });
+
+                var ProfileView = Backbone.View.extend({
+                    el: "#profiles",
+                    template: _.template($('#profileTemplate').html()),
+                    render: function(eventName) {
+                        _.each(this.model.models, function(profile){
+                            var profileTemplate = this.template(profile.toJSON());
+                            $(this.el).append(profileTemplate);
+                        }, this);
+
+                        return this;
+                    }
+                });
+
+                var profiles = new ProfileList();
+console.log(profiles);
+                var profilesView = new ProfileView({model: profiles});
+
+                profiles.fetch({
+                  success: function() {
+                    profilesView.render();
+                    console.log('Success!');
+                    }
+                });
+
+            });
+        </script>
+        <title>Nearly Headless Drupal</title>
+    </head>
+    <body>
+        <div id="profiles"></div>
+
+        <script id="profileTemplate" type="text/template">
+            <div class="profile" style="margin-bottom: 21px;">
+                <div class="info">
+                    <div class="name">
+                        <%= name[0].value %>
+                    </div>
+                    <div class="mail">
+                        <%= mail[0].value %>
+                    </div>
+                </div>
+            </div>
+
+        </script>
+    </body>
+</html>
