@@ -19,7 +19,7 @@
 
                 var ProfileList = Backbone.Collection.extend({
                     model: Profile,
-                    url: 'http://nearly.local.dev/api/user'
+                    url: 'http://nearly.local.dev/api/users'
                 });
 
                 var ProfileView = Backbone.View.extend({
@@ -54,13 +54,13 @@ console.log(profiles);
         <div id="profiles"></div>
 
         <script id="profileTemplate" type="text/template">
-            <div class="profile" style="margin-bottom: 21px;">
+            <div class="profile">
                 <div class="info">
                     <div class="name">
-                        <%= name[0].value %>
+                        <%= name %>
                     </div>
-                    <div class="mail">
-                        <%= mail[0].value %>
+                    <div class="user_picture">
+                        <%= user_picture %>
                     </div>
                 </div>
             </div>

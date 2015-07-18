@@ -6,12 +6,13 @@
         <script src="js/backbone.min.js"></script>
 
         <script>
+
             $(function() {
                 var Profile = Backbone.Model.extend({});
 
                 var ProfileList = Backbone.Collection.extend({
                     model: Profile,
-                    url: 'http://nearly.local.dev/api/node'
+                    url: 'http://nearly.local.dev/api/projects'
                 });
 
                 var ProfileView = Backbone.View.extend({
@@ -28,13 +29,11 @@
                 });
 
                 var profiles = new ProfileList();
-
                 var profilesView = new ProfileView({model: profiles});
 
                 profiles.fetch({
                   success: function() {
                     profilesView.render();
-                    console.log('Success!');
                     }
                 });
 
@@ -43,20 +42,51 @@
         <title>Nearly Headless Drupal</title>
     </head>
     <body>
+        <h1>TOP SECRET PROJECTSs</h1>
         <div id="profiles"></div>
 
         <script id="profileTemplate" type="text/template">
-            <div class="profile" style="margin-bottom: 21px;">
+            <div class="profile">
                 <div class="info">
-                    <div class="title">
-                      <h2><%= title[0].value %></h2>
+                    <div class="project_name">
+                        <h2><%= project_name %></h2>
                     </div>
-                    <div class="body">
-                        <p><%= body[0].value %></p>
+                    <div class="team_members">
+                        <%= field_team_member %>
                     </div>
                 </div>
             </div>
 
         </script>
     </body>
+
+    <style>
+    .profile {
+        display: inline;
+        float: left;
+        padding: 0 20px 20px;
+        background: #eee;
+        margin: 20px;
+    }
+
+    .profile h2 {
+        text-align: center;
+    }
+
+    .profile ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .profile li {
+        float: left;
+        padding: 0 5px;
+    }
+
+    div#profiles {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    </style>
+
 </html>
