@@ -1,0 +1,37 @@
+[
+  {
+    name: "admin",
+    user_picture: "<img src='http://nearly.local.dev/sites/default/files/pictures/admin_0.jpg' width='85' height='85' alt='' typeof='foaf:Image' class='img-responsive' /> ",
+    roles_target_id: "Administrator"
+  },
+  {
+    name: "sarah",
+    user_picture: "<img src='http://nearly.local.dev/sites/default/files/pictures/sarah.jpg' width='85' height='85' alt='' typeof='foaf:Image' class='img-responsive' /> ",
+    roles_target_id: ""
+  },
+  {
+    name: "chris",
+    user_picture: "<img src='http://nearly.local.dev/sites/default/files/pictures/chris.jpg' width='85' height='85' alt='' typeof='foaf:Image' class='img-responsive' /> ",
+    roles_target_id: ""
+  },
+  {
+    name: "grace",
+    user_picture: "<img src='http://nearly.local.dev/sites/default/files/pictures/grace.jpg' width='85' height='85' alt='' typeof='foaf:Image' class='img-responsive' /> ",
+    roles_target_id: ""
+  },
+  {
+    name: "adelle",
+    user_picture: "<img src='http://nearly.local.dev/sites/default/files/pictures/adelle.jpg' width='85' height='85' alt='' typeof='foaf:Image' class='img-responsive' /> ",
+    roles_target_id: ""
+  },
+  {
+    name: "justin",
+    user_picture: "<img src='http://nearly.local.dev/sites/default/files/pictures/justin.jpg' width='85' height='85' alt='' typeof='foaf:Image' class='img-responsive' /> ",
+    roles_target_id: ""
+  },
+  {
+    name: "dan",
+    user_picture: "<img src='http://nearly.local.dev/sites/default/files/pictures/dan.jpg' width='85' height='85' alt='' typeof='foaf:Image' class='img-responsive' /> ",
+    roles_target_id: ""
+  }
+]
